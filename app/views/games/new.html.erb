@@ -1,0 +1,18 @@
+<h1>COUNTDOWN</h1>
+
+<div class="list">
+  <% @selection.each do |letter| %>
+    <div class="box">
+      <strong> <%=  letter %> </strong>
+   </div>
+  <% end %>
+</div>
+
+<div class="search">
+  <form action="/score" method="post">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <%= hidden_field_tag :grid, @selection %>
+  <input type="text" name="word">
+  <input type="submit" value="Play" class="submit">
+</div>
+</form>
